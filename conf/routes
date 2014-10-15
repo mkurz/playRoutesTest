@@ -5,5 +5,45 @@
 # Home page
 GET     /                           controllers.Application.index()
 
+GET     /stringEmpty                controllers.Application.stringRoute(id = "")
+GET     /stringNull                 controllers.Application.stringRoute(id = null)
+GET     /stringValue                controllers.Application.stringRoute(id = "hello")
+GET     /string/:id                 controllers.Application.stringRoute(id)
+
+GET     /intNull                    controllers.Application.integerRoute(id: java.lang.Integer = null)
+GET     /intValue                   controllers.Application.integerRoute(id: java.lang.Integer = 12345)
+GET     /int/:id                    controllers.Application.integerRoute(id: java.lang.Integer)
+
+GET     /longNull                   controllers.Application.longRoute(id: java.lang.Long = null)
+GET     /longValue                  controllers.Application.longRoute(id: java.lang.Long = 12345)
+GET     /long/:id                   controllers.Application.longRoute(id: java.lang.Long)
+
+GET     /booleanNull                controllers.Application.booleanRoute(id: java.lang.Boolean = null)
+GET     /booleanTrue                controllers.Application.booleanRoute(id: java.lang.Boolean = true)
+GET     /booleanFalse               controllers.Application.booleanRoute(id: java.lang.Boolean = false)
+GET     /boolean/:id                controllers.Application.booleanRoute(id: java.lang.Boolean)
+
+GET     /uuidNull                   controllers.Application.uuidRoute(id: java.util.UUID = null)
+GET     /uuidValue                  controllers.Application.uuidRoute(id: java.util.UUID = java.util.UUID.fromString("00000000-0000-0000-0000-000000000000"))
+GET     /uuid/:id                   controllers.Application.uuidRoute(id: java.util.UUID)
+
+GET     /JOptionNull                controllers.Application.jOptionRoute(id: play.libs.F.Option[Integer] = play.libs.F.Option.None[Integer])
+GET     /JOptionValue               controllers.Application.jOptionRoute(id: play.libs.F.Option[Integer] = play.libs.F.Option.Some(12345))
+GET     /JOptionValue1              controllers.Application.jOptionRoute(id: play.libs.F.Option[Integer] = play.libs.F.Option.Some(98765))
+GET     /JOptionValue2              controllers.Application.jOptionRoute(id: play.libs.F.Option[Integer])
+
+GET     /OptionNull                 controllers.Application.sOptionRoute(id: Option[Integer] = None)
+GET     /OptionValue                controllers.Application.sOptionRoute(id: Option[Integer] = Option(12345))
+GET     /OptionValue1               controllers.Application.sOptionRoute(id: Option[Integer] = Option(98765))
+GET     /OptionValue2               controllers.Application.sOptionRoute(id: Option[Integer])
+
+# Can't assign null to scala.Int, scala.Long, etc. - Fails with: "an expression of type Null is ineligible for implicit conversion"
+#GET     /scalaIntNull               controllers.Application.scalaIntRoute(id: Int = null)
+# But this of course works:
+GET     /scalaIntValue              controllers.Application.scalaIntRoute(id: Int = 12345)
+GET     /scalaInt/:id               controllers.Application.scalaIntRoute(id: Int)
+
+
 # Map static resources from the /public folder to the /assets URL path
+GET     /assets/routes.js           controllers.Application.routesJS()
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
