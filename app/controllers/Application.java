@@ -56,7 +56,8 @@ public class Application extends Controller {
                 controllers.routes.javascript.Application.uuidRoute(),
                 controllers.routes.javascript.Application.jOptionRoute(),
                 controllers.routes.javascript.Application.sOptionRoute(),
-                controllers.routes.javascript.Application.scalaIntRoute()
+                controllers.routes.javascript.Application.scalaIntRoute(),
+                controllers.routes.javascript.Assets.at()
             )
         );
     }

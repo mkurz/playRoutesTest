@@ -46,4 +46,5 @@ GET     /scalaInt/:id               controllers.Application.scalaIntRoute(id: In
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/routes.js           controllers.Application.routesJS()
+GET     /assets/picture.jpg         controllers.Assets.at(path="/public", file="sample.jpg")
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
