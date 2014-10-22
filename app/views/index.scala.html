@@ -2,6 +2,64 @@
 
 @main("Welcome to Play") {
 
-    @play20.welcome(message, style = "Java")
+@routes.Application.stringRoute("")
+<br />
+@routes.Application.stringRoute(null)
+<br />
+@routes.Application.stringRoute("hello")
+<br />
+@routes.Application.stringRoute("egal was")
+
+<br />
+@routes.Application.integerRoute(null)
+<br />
+@routes.Application.integerRoute(12345)
+<br />
+@routes.Application.integerRoute(11111)
+
+<br />
+@routes.Application.longRoute(null)
+<br />
+@routes.Application.longRoute(12345)
+<br />
+@routes.Application.longRoute(11111)
+
+<br />
+@routes.Application.booleanRoute(null)
+<br />
+@routes.Application.booleanRoute(true)
+<br />
+@routes.Application.booleanRoute(false)
+
+<br />
+@routes.Application.uuidRoute(null)
+<br />
+@routes.Application.uuidRoute(java.util.UUID.fromString("00000000-0000-0000-0000-000000000000"))
+<br />
+@routes.Application.uuidRoute(java.util.UUID.fromString("10000000-0000-0000-0000-100000000001"))
+
+
+<br />
+@routes.Application.jOptionRoute(play.libs.F.Option.None())
+<br />
+@routes.Application.jOptionRoute(play.libs.F.Option.Some(12345))
+<br />
+@routes.Application.jOptionRoute(play.libs.F.Option.Some(98765))
+<br />
+@routes.Application.jOptionRoute(play.libs.F.Option.Some(11111))
+
+<br />
+@routes.Application.sOptionRoute(scala.None)
+<br />
+@routes.Application.sOptionRoute(scala.Option(12345))
+<br />
+@routes.Application.sOptionRoute(scala.Option(98765))
+<br />
+@routes.Application.sOptionRoute(scala.Option(11111))
+
+<br />
+@routes.Application.scalaIntRoute(12345)
+<br />
+@routes.Application.scalaIntRoute(11111)
 
 }
