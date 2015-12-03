@@ -27,10 +27,10 @@ GET     /uuidNull                   controllers.Application.uuidRoute(id: java.u
 GET     /uuidValue                  controllers.Application.uuidRoute(id: java.util.UUID = java.util.UUID.fromString("00000000-0000-0000-0000-000000000000"))
 GET     /uuid/:id                   controllers.Application.uuidRoute(id: java.util.UUID)
 
-GET     /JOptionNull                controllers.Application.jOptionRoute(id: play.libs.F.Option[Integer] = play.libs.F.Option.None[Integer])
-GET     /JOptionValue               controllers.Application.jOptionRoute(id: play.libs.F.Option[Integer] = play.libs.F.Option.Some(12345))
-GET     /JOptionValue1              controllers.Application.jOptionRoute(id: play.libs.F.Option[Integer] = play.libs.F.Option.Some(98765))
-GET     /JOptionValue2              controllers.Application.jOptionRoute(id: play.libs.F.Option[Integer])
+GET     /JOptionNull                controllers.Application.jOptionRoute(id: java.util.Optional[Integer] = java.util.Optional.empty[Integer])
+GET     /JOptionValue               controllers.Application.jOptionRoute(id: java.util.Optional[Integer] = java.util.Optional.ofNullable(12345))
+GET     /JOptionValue1              controllers.Application.jOptionRoute(id: java.util.Optional[Integer] = java.util.Optional.ofNullable(98765))
+GET     /JOptionValue2              controllers.Application.jOptionRoute(id: java.util.Optional[Integer])
 
 GET     /OptionNull                 controllers.Application.sOptionRoute(id: Option[Integer] = None)
 GET     /OptionValue                controllers.Application.sOptionRoute(id: Option[Integer] = Option(12345))

@@ -33,7 +33,7 @@ public class Application extends Controller {
         return ok("id: " + id);
     }
 
-    public static Result jOptionRoute(play.libs.F.Option<Integer> id) {
+    public static Result jOptionRoute(java.util.Optional<Integer> id) {
         return ok("id: " + id);
     }
 
@@ -46,7 +46,6 @@ public class Application extends Controller {
     }
 
     public static Result routesJS() {
-        response().setContentType("text/javascript");
         return ok(
             Routes.javascriptRouter("jsRoutes",
                 controllers.routes.javascript.Application.stringRoute(),
@@ -59,6 +58,6 @@ public class Application extends Controller {
                 controllers.routes.javascript.Application.scalaIntRoute(),
                 controllers.routes.javascript.Assets.at()
             )
-        );
+        ).as("text/javascript");
     }
 }

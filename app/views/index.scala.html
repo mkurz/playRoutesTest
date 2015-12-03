@@ -40,13 +40,13 @@
 
 
 <br />
-@routes.Application.jOptionRoute(play.libs.F.Option.None())
+@routes.Application.jOptionRoute(java.util.Optional.empty())
 <br />
-@routes.Application.jOptionRoute(play.libs.F.Option.Some(12345))
+@routes.Application.jOptionRoute(java.util.Optional.ofNullable(12345))
 <br />
-@routes.Application.jOptionRoute(play.libs.F.Option.Some(98765))
+@routes.Application.jOptionRoute(java.util.Optional.ofNullable(98765))
 <br />
-@routes.Application.jOptionRoute(play.libs.F.Option.Some(11111))
+@routes.Application.jOptionRoute(java.util.Optional.ofNullable(11111))
 
 <br />
 @routes.Application.sOptionRoute(scala.None)
