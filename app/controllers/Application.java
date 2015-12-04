@@ -9,43 +9,43 @@ import java.util.UUID;
 
 public class Application extends Controller {
 
-    public static Result index() {
+    public Result index() {
         return ok(index.render("Your new application is ready."));
     }
 
-    public static Result stringRoute(String id) {
+    public Result stringRoute(String id) {
         return ok("id: " + id);
     }
 
-    public static Result integerRoute(Integer id) {
+    public Result integerRoute(Integer id) {
         return ok("id: " + id);
     }
 
-    public static Result longRoute(Long id) {
+    public Result longRoute(Long id) {
         return ok("id: " + id);
     }
 
-    public static Result booleanRoute(Boolean id) {
+    public Result booleanRoute(Boolean id) {
         return ok("id: " + id);
     }
 
-    public static Result uuidRoute(UUID id) {
+    public Result uuidRoute(UUID id) {
         return ok("id: " + id);
     }
 
-    public static Result jOptionRoute(java.util.Optional<Integer> id) {
+    public Result jOptionRoute(java.util.Optional<Integer> id) {
         return ok("id: " + id);
     }
 
-    public static Result sOptionRoute(scala.Option<Integer> id) {
+    public Result sOptionRoute(scala.Option<Integer> id) {
         return ok("id: " + id);
     }
 
-    public static Result scalaIntRoute(Integer id) {
+    public Result scalaIntRoute(Integer id) {
         return ok("id: " + id);
     }
 
-    public static Result routesJS() {
+    public Result routesJS() {
         return ok(
             Routes.javascriptRouter("jsRoutes",
                 controllers.routes.javascript.Application.stringRoute(),
